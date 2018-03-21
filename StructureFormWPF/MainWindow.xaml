@@ -1,27 +1,32 @@
-﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<Window x:Name='myWindow'
+        x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DecoFormWPF"
-        xmlns:ToggleSwitch='clr-namespace:ToggleSwitch;assembly=ToggleSwitch'
-        x:Name='myWindow'
-        x:Class="MainWindow"
+        xmlns:local="clr-namespace:StructureFormWPF"
         mc:Ignorable="d"
-        Title="Axis"
-        Height="600"
-        Width="350"
+        Title="Surface Definition Toolbox"
+        Height="500"
+        Width="400"
         Loaded='Window_Loaded'
         ResizeMode='NoResize'
-        Topmost='True'
-        Icon='Icons/DomeCamera.ico'>
-
+        Topmost='True'>
     <Window.Resources>
-        <Style TargetType='{x:Type Button}'>
-            <Setter Property='Margin'
-                    Value='10' />
-            <Setter Property='Padding'
-                    Value='11' />
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Buttons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType='{x:Type Button}'>
+                <Setter Property='Margin'
+                        Value='10' />
+                <Setter Property='Padding'
+                        Value='11' />
+            </Style>
+
+        </ResourceDictionary>
+
     </Window.Resources>
 
     <Grid x:Name='myGrid'>
@@ -30,7 +35,7 @@
             <RowDefinition Height='160*' />
             <RowDefinition Height='160*' />
             <RowDefinition Height='77*' />
-            <RowDefinition Height='91*' />
+
         </Grid.RowDefinitions>
 
         <Label Grid.Row='0'
@@ -39,7 +44,7 @@
                FontSize='16'
                VerticalContentAlignment='Center'
                Width='280'
-               Content='Decoration Specification Dashboard'
+               Content='Surface Definition Toolbox'
                Foreground='#FF506EBF' />
         <Button x:Name='helpButton'
                 Grid.Row='0'
@@ -55,8 +60,8 @@
             <Grid>
                 <Grid.RowDefinitions>
                 </Grid.RowDefinitions>
-                <ContentControl Content="{StaticResource Help}"
-                                Grid.Row='0' />
+                <ContentControl Grid.Row='0'
+                       Content='{StaticResource Question}' />
             </Grid>
         </Button>
         <StackPanel x:Name='firstrowstack'
@@ -66,48 +71,50 @@
                     Grid.Row='1'
                     Grid.RowSpan='1'>
 
-            <Button x:Name='setGreenColor'
+            <Button x:Name='setCyanColor'
                     Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
                     Margin='10'
                     HorizontalContentAlignment='Stretch'
                     VerticalContentAlignment='Stretch'
-                    Width='90'
+                    Width='100'
                     Height='125'
-                    ToolTip="Sets the selected surfaces green">
+                    ToolTip="Sets the selected surfaces to surface A">
 
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <ContentControl Content="{StaticResource GreenBucket}" Grid.Row="0"
-                           VerticalAlignment='Top' />
+                    <ContentControl Grid.Row="0"
+                                    Content="{StaticResource CyanA}"
+                                    VerticalAlignment="Top" />
                     <TextBlock Grid.Row="1"
                                HorizontalAlignment="Center"
                                VerticalAlignment='Bottom'
-                               Margin='0,20,0,0'><Run Text='Set Green' /></TextBlock>
+                               Margin='0,20,0,0'><Run Text='Set Surface A' /></TextBlock>
                 </Grid>
 
             </Button>
-            <Button x:Name='setYellowColor'
+            <Button x:Name='setPurpleColor'
                     Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
                     Margin='10'
                     HorizontalContentAlignment='Stretch'
                     VerticalContentAlignment='Stretch'
-                    Width='90'
+                    Width='100'
                     Height='125'
-                    ToolTip="Sets the selected surfaces yellow">
+                    ToolTip="Sets the selected surfaces to surface B">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <ContentControl Content="{StaticResource YellowBucket}" Grid.Row="0"
-                           VerticalAlignment='Top' />
+                    <ContentControl Grid.Row="0"
+                                    Content="{StaticResource PurpleB}"
+                                    VerticalAlignment='Top' />
                     <TextBlock Grid.Row="1"
                                HorizontalAlignment="Center"
                                VerticalAlignment='Bottom'
-                               Margin='0,20,0,0'><Run Text='Set Yellow' /></TextBlock>
+                               Margin='0,20,0,0'><Run Text='Set Surface B' /></TextBlock>
                 </Grid>
             </Button>
             <Button x:Name='setRedColor'
@@ -115,7 +122,7 @@
                     Margin='10'
                     HorizontalContentAlignment='Stretch'
                     VerticalContentAlignment='Stretch'
-                    Width='90'
+                    Width='100'
                     Height='125'
                     ToolTip="Sets the selected surfaces red">
                 <Grid>
@@ -123,12 +130,13 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <ContentControl Content="{StaticResource RedBucket}" Grid.Row="0"
-                           VerticalAlignment='Top' />
+                    <ContentControl Grid.Row="0"
+                                    Content="{StaticResource PinkC}"
+                                    VerticalAlignment='Top' />
                     <TextBlock Grid.Row="1"
                                HorizontalAlignment="Center"
                                VerticalAlignment='Bottom'
-                               Margin='0,20,0,0'><Run Text='Set Red' /></TextBlock>
+                               Margin='0,20,0,0'><Run Text='Set Surface C' /></TextBlock>
                 </Grid>
             </Button>
         </StackPanel>
@@ -152,8 +160,9 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <ContentControl Content="{StaticResource WhiteBackground}" Grid.Row="0"
-                           VerticalAlignment='Top' />
+                    <ContentControl Grid.Row="0"
+                                    Content="F"
+                                    VerticalAlignment='Top' />
                     <TextBlock Grid.Row="1"
                                HorizontalAlignment="Center"
                                VerticalAlignment='Bottom'
@@ -175,8 +184,9 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <ContentControl Content="{StaticResource Erase}" Grid.Row="0"
-                           VerticalAlignment='Top' />
+                    <ContentControl Grid.Row="0"
+                                    Content="A"
+                                    VerticalAlignment='Top' />
                     <TextBlock Grid.Row="1"
                                HorizontalAlignment="Center"
                                VerticalAlignment='Bottom'
@@ -186,29 +196,11 @@
                 </Grid>
             </Button>
         </StackPanel>
-        <Label x:Name='label'
-               Content='Toggle switch to use Decoration Specification'
-               Height='27'
-               Grid.Row='3'
-               VerticalAlignment='Top'
-               HorizontalAlignment='Center'
-               Width='266'
-               Margin='39,8,39,0'
-               FontWeight='Bold' />
-        <ToggleSwitch:HorizontalToggleSwitch x:Name='myToggle'
-                                             HorizontalAlignment='Center'
-                                             Height='30'
-                                             Grid.Row='3'
-                                             VerticalAlignment='Bottom'
-                                             Width='120'
-                                             FontFamily='Segoe UI'
-                                             FontSize='16'
-                                             Margin='0,0,0,5'
-                                             ToolTip="Toggle the switch to set Surface finish parameter correctly" />
+
         <TextBox x:Name='InfoTextBox'
                  Text='TextBox'
                  Background='{DynamicResource {x:Static SystemColors.InfoBrushKey}}'
-                 Grid.Row='4'
+                 Grid.Row='3'
                  Margin='10,9.667,9.667,10'
                  FontWeight='Bold'
                  FontSize='14' />
