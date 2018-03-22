@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="Axis"
         Height="600"
-        Width="350"
+        Width="420"
         Loaded='Window_Loaded'
         ResizeMode='NoResize'
         Topmost='True'
@@ -18,7 +18,7 @@
     <Window.Resources>
         <Style TargetType='{x:Type Button}'>
             <Setter Property='Margin'
-                    Value='10' />
+                    Value='8' />
             <Setter Property='Padding'
                     Value='11' />
         </Style>
@@ -64,15 +64,15 @@
                     HorizontalAlignment='Center'
                     VerticalAlignment='Center'
                     Grid.Row='1'
-                    Grid.RowSpan='1'>
+                    Grid.RowSpan='1' Margin="0,0">
 
             <Button x:Name='setGreenColor'
                     Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
-                    Margin='10'
+                    Margin='15,10,10,10'
                     HorizontalContentAlignment='Stretch'
                     VerticalContentAlignment='Stretch'
-                    Width='90'
-                    Height='125'
+                    Width='80'
+                    Height='110'
                     ToolTip="Sets the selected surfaces green">
 
                 <Grid>
@@ -89,14 +89,37 @@
                 </Grid>
 
             </Button>
+            <Button x:Name='setBlueColor'
+                    Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
+                    Margin='10'
+                    HorizontalContentAlignment='Stretch'
+                    VerticalContentAlignment='Stretch'
+                    Width='80'
+                    Height='110'
+                    ToolTip="Sets the selected surfaces blue">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <ContentControl Content="{StaticResource BlueBucket}" Grid.Row="0"
+                           VerticalAlignment='Top' />
+                    <TextBlock Grid.Row="1"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment='Bottom'
+                               Margin='0,20,0,0'><Run Text='Set Blue' /></TextBlock>
+                </Grid>
+
+            </Button>
             <Button x:Name='setYellowColor'
                     Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
                     Margin='10'
                     HorizontalContentAlignment='Stretch'
                     VerticalContentAlignment='Stretch'
-                    Width='90'
-                    Height='125'
-                    ToolTip="Sets the selected surfaces yellow">
+                    Width='80'
+                    Height='110'
+                    ToolTip="Sets the selected surfaces yellow" Padding="10">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -112,11 +135,11 @@
             </Button>
             <Button x:Name='setRedColor'
                     Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
-                    Margin='10'
+                    Margin='10,10,15,10'
                     HorizontalContentAlignment='Stretch'
                     VerticalContentAlignment='Stretch'
-                    Width='90'
-                    Height='125'
+                    Width='80'
+                    Height='110'
                     ToolTip="Sets the selected surfaces red">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -132,6 +155,7 @@
                 </Grid>
             </Button>
         </StackPanel>
+        
         <StackPanel x:Name='secondrowstack'
                     Orientation='Horizontal'
                     HorizontalAlignment='Center'

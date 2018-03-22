@@ -129,6 +129,31 @@ Class MainWindow
 
     End Sub
 
+    Private Sub setBlueColorMacro()
+        Try
+            'asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
+            'session = asyncConnection.Session
+            'activeserver = session.GetActiveServer
+            'model = session.CurrentModel
+            Dim macrostring As String
+            macrostring = "~ Select `main_dlg_cur` `user_custom_page_315894752:ProCmdViewGallery`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Select `main_dlg_cur` \"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "`ProCmdViewGallery_layoutph.palette_holder.myAppPalette.NamesList` 1 \"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "`deco_blue`;~ Timer `UI Desktop` `UI Desktop` `Gallery_UI_Timer`;"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Close `main_dlg_cur` `user_custom_page_315894752:ProCmdViewGallery`;"
+
+            session.RunMacro(macrostring)
+
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
     Private Sub setYellowColorMacro()
 
         Try
@@ -304,6 +329,11 @@ Class MainWindow
     Private Sub setGreenColor_Click(sender As Object, e As RoutedEventArgs) Handles setGreenColor.Click
         Call setGreenColorMacro()
     End Sub
+    Private Sub setBlueColor_Click(sender As Object, e As RoutedEventArgs) Handles setBlueColor.Click
+        Call setBlueColorMacro()
+    End Sub
+
+
 
     Private Sub setYellowColor_Click(sender As Object, e As RoutedEventArgs) Handles setYellowColor.Click
         Call setYellowColorMacro()
@@ -341,4 +371,5 @@ Class MainWindow
         Catch
         End Try
     End Sub
+
 End Class
