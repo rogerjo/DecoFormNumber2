@@ -110,7 +110,7 @@ Class MainWindow
             'activeserver = session.GetActiveServer
             'model = session.CurrentModel
             Dim macrostring As String
-            macrostring = "~ Select `main_dlg_cur` `user_custom_page_315894752:ProCmdViewGallery`;\"
+            macrostring = "~ Select `main_dlg_cur` `user_custom_page_300586328:ProCmdViewGallery`;\"
             macrostring = macrostring & vbCrLf
             macrostring = macrostring & "~ Select `main_dlg_cur` \"
             macrostring = macrostring & vbCrLf
@@ -118,7 +118,7 @@ Class MainWindow
             macrostring = macrostring & vbCrLf
             macrostring = macrostring & "`deco_green`;~ Timer `UI Desktop` `UI Desktop` `Gallery_UI_Timer`;"
             macrostring = macrostring & vbCrLf
-            macrostring = macrostring & "~ Close `main_dlg_cur` `user_custom_page_315894752:ProCmdViewGallery`;"
+            macrostring = macrostring & "~ Close `main_dlg_cur` `user_custom_page_300586328:ProCmdViewGallery`;"
 
             session.RunMacro(macrostring)
 
@@ -136,7 +136,7 @@ Class MainWindow
             'activeserver = session.GetActiveServer
             'model = session.CurrentModel
             Dim macrostring As String
-            macrostring = "~ Select `main_dlg_cur` `user_custom_page_315894752:ProCmdViewGallery`;\"
+            macrostring = "~ Select `main_dlg_cur` `user_custom_page_300586328:ProCmdViewGallery`;\"
             macrostring = macrostring & vbCrLf
             macrostring = macrostring & "~ Select `main_dlg_cur` \"
             macrostring = macrostring & vbCrLf
@@ -144,7 +144,7 @@ Class MainWindow
             macrostring = macrostring & vbCrLf
             macrostring = macrostring & "`deco_blue`;~ Timer `UI Desktop` `UI Desktop` `Gallery_UI_Timer`;"
             macrostring = macrostring & vbCrLf
-            macrostring = macrostring & "~ Close `main_dlg_cur` `user_custom_page_315894752:ProCmdViewGallery`;"
+            macrostring = macrostring & "~ Close `main_dlg_cur` `user_custom_page_300586328:ProCmdViewGallery`;"
 
             session.RunMacro(macrostring)
 
@@ -162,7 +162,7 @@ Class MainWindow
             'activeserver = session.GetActiveServer
             'model = session.CurrentModel
             Dim macrostring As String
-            macrostring = "~ Select `main_dlg_cur` `user_custom_page_315894752:ProCmdViewGallery`;\"
+            macrostring = "~ Select `main_dlg_cur` `user_custom_page_300586328:ProCmdViewGallery`;\"
             macrostring = macrostring & vbCrLf
             macrostring = macrostring & "~ Select `main_dlg_cur` \"
             macrostring = macrostring & vbCrLf
@@ -170,7 +170,7 @@ Class MainWindow
             macrostring = macrostring & vbCrLf
             macrostring = macrostring & "`deco_yellow`;~ Timer `UI Desktop` `UI Desktop` `Gallery_UI_Timer`;"
             macrostring = macrostring & vbCrLf
-            macrostring = macrostring & "~ Close `main_dlg_cur` `user_custom_page_315894752:ProCmdViewGallery`;"
+            macrostring = macrostring & "~ Close `main_dlg_cur` `user_custom_page_300586328:ProCmdViewGallery`;"
 
             session.RunMacro(macrostring)
 
@@ -188,7 +188,7 @@ Class MainWindow
             'activeserver = session.GetActiveServer
             'model = session.CurrentModel
             Dim macrostring As String
-            macrostring = "~ Select `main_dlg_cur` `user_custom_page_315894752:ProCmdViewGallery`;\"
+            macrostring = "~ Select `main_dlg_cur` `user_custom_page_300586328:ProCmdViewGallery`;\"
             macrostring = macrostring & vbCrLf
             macrostring = macrostring & "~ Select `main_dlg_cur` \"
             macrostring = macrostring & vbCrLf
@@ -196,7 +196,7 @@ Class MainWindow
             macrostring = macrostring & vbCrLf
             macrostring = macrostring & "`deco_red`;~ Timer `UI Desktop` `UI Desktop` `Gallery_UI_Timer`;"
             macrostring = macrostring & vbCrLf
-            macrostring = macrostring & "~ Close `main_dlg_cur` `user_custom_page_315894752:ProCmdViewGallery`;"
+            macrostring = macrostring & "~ Close `main_dlg_cur` `user_custom_page_300586328:ProCmdViewGallery`;"
 
             session.RunMacro(macrostring)
 
@@ -247,11 +247,11 @@ Class MainWindow
             'activeserver = session.GetActiveServer
             'model = session.CurrentModel
             Dim macrostring As String
-            macrostring = "~ Select `main_dlg_cur` `appl_casc`;\"
-            macrostring = macrostring & vbCrLf
-            macrostring = macrostring & "~ Close `main_dlg_cur` `appl_casc`;\"
-            macrostring = macrostring & vbCrLf
-            macrostring = macrostring & "~ Select `main_dlg_cur` `Model:ProCmdViewGallery`;\"
+            'macrostring = "~ Select `main_dlg_cur` `appl_casc`;\"
+            'macrostring = macrostring & vbCrLf
+            'macrostring = macrostring & "~ Close `main_dlg_cur` `appl_casc`;\"
+            'macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Select `main_dlg_cur` `user_custom_page_300586328:ProCmdViewGallery`;\"
             macrostring = macrostring & vbCrLf
             macrostring = macrostring & "~ Select `main_dlg_cur` \"
             macrostring = macrostring & vbCrLf
@@ -323,6 +323,63 @@ Class MainWindow
         InfoTextBox.Text = "Checking if parameter is set..."
         Call StartApplicationAndConnect()
         Call getCurrentParameterSetting()
+        Call getDecoView()
+
+    End Sub
+
+    Private Sub getDecoView()
+        Dim macrostring As String
+
+        Try
+
+            macrostring = "~ Activate `main_dlg_cur` `page_View_control_btn` 1;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Command `ProCmdViewVisTool` ;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Select `visual_dlg0` `RadioSelApplMgr` 1 `appearance state`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Arm `visual_dlg0` `Table` 2 `decoration specification` `name_column`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Select `visual_dlg0` `Table` 2 `decoration specification` `name_column`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Arm `visual_dlg0` `Table` 2 `decoration specification` `name_column`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Activate `visual_dlg0` `Table` 2 `decoration specification` `name_column`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Close `visual_dlg0` `visual_dlg0`;"
+
+
+            session.RunMacro(macrostring)
+        Catch ex As Exception
+
+        End Try
+
+
+    End Sub
+    Private Sub getDefaultView()
+        Dim macrostring As String
+        Try
+            macrostring = "~ Activate `main_dlg_cur` `page_View_control_btn` 1;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Command `ProCmdViewVisTool` ;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Select `visual_dlg0` `RadioSelApplMgr` 1 `appearance state`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Arm `visual_dlg0` `Table` 2 `default appearance` `name_column`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Select `visual_dlg0` `Table` 2 `default appearance` `name_column`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Arm `visual_dlg0` `Table` 2 `default appearance` `name_column`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Activate `visual_dlg0` `Table` 2 `default appearance` `name_column`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Close `visual_dlg0` `visual_dlg0`;"
+
+
+            session.RunMacro(macrostring)
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
@@ -367,6 +424,7 @@ Class MainWindow
 
     Private Sub MainWindow_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         Try
+            getDefaultView()
             asyncConnection.Disconnect(1)
         Catch
         End Try
