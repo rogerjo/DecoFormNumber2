@@ -110,7 +110,7 @@ Class MainWindow
             'activeserver = session.GetActiveServer
             'model = session.CurrentModel
             Dim macrostring As String
-            macrostring = "~ Select `main_dlg_cur` `user_custom_page_300586328:ProCmdViewGallery`;\"
+            macrostring = "~ Select `main_dlg_cur` `View:ProCmdViewGallery`;\"
             macrostring = macrostring & vbCrLf
             macrostring = macrostring & "~ Select `main_dlg_cur` \"
             macrostring = macrostring & vbCrLf
@@ -118,7 +118,7 @@ Class MainWindow
             macrostring = macrostring & vbCrLf
             macrostring = macrostring & "`deco_green`;~ Timer `UI Desktop` `UI Desktop` `Gallery_UI_Timer`;"
             macrostring = macrostring & vbCrLf
-            macrostring = macrostring & "~ Close `main_dlg_cur` `user_custom_page_300586328:ProCmdViewGallery`;"
+            macrostring = macrostring & "~ Close `main_dlg_cur` `View:ProCmdViewGallery`;"
 
             session.RunMacro(macrostring)
 
@@ -136,7 +136,7 @@ Class MainWindow
             'activeserver = session.GetActiveServer
             'model = session.CurrentModel
             Dim macrostring As String
-            macrostring = "~ Select `main_dlg_cur` `user_custom_page_300586328:ProCmdViewGallery`;\"
+            macrostring = "~ Select `main_dlg_cur` `View:ProCmdViewGallery`;\"
             macrostring = macrostring & vbCrLf
             macrostring = macrostring & "~ Select `main_dlg_cur` \"
             macrostring = macrostring & vbCrLf
@@ -144,7 +144,7 @@ Class MainWindow
             macrostring = macrostring & vbCrLf
             macrostring = macrostring & "`deco_blue`;~ Timer `UI Desktop` `UI Desktop` `Gallery_UI_Timer`;"
             macrostring = macrostring & vbCrLf
-            macrostring = macrostring & "~ Close `main_dlg_cur` `user_custom_page_300586328:ProCmdViewGallery`;"
+            macrostring = macrostring & "~ Close `main_dlg_cur` `View:ProCmdViewGallery`;"
 
             session.RunMacro(macrostring)
 
@@ -162,7 +162,7 @@ Class MainWindow
             'activeserver = session.GetActiveServer
             'model = session.CurrentModel
             Dim macrostring As String
-            macrostring = "~ Select `main_dlg_cur` `user_custom_page_300586328:ProCmdViewGallery`;\"
+            macrostring = "~ Select `main_dlg_cur` `View:ProCmdViewGallery`;\"
             macrostring = macrostring & vbCrLf
             macrostring = macrostring & "~ Select `main_dlg_cur` \"
             macrostring = macrostring & vbCrLf
@@ -170,7 +170,7 @@ Class MainWindow
             macrostring = macrostring & vbCrLf
             macrostring = macrostring & "`deco_yellow`;~ Timer `UI Desktop` `UI Desktop` `Gallery_UI_Timer`;"
             macrostring = macrostring & vbCrLf
-            macrostring = macrostring & "~ Close `main_dlg_cur` `user_custom_page_300586328:ProCmdViewGallery`;"
+            macrostring = macrostring & "~ Close `main_dlg_cur` `View:ProCmdViewGallery`;"
 
             session.RunMacro(macrostring)
 
@@ -188,7 +188,7 @@ Class MainWindow
             'activeserver = session.GetActiveServer
             'model = session.CurrentModel
             Dim macrostring As String
-            macrostring = "~ Select `main_dlg_cur` `user_custom_page_300586328:ProCmdViewGallery`;\"
+            macrostring = "~ Select `main_dlg_cur` `View:ProCmdViewGallery`;\"
             macrostring = macrostring & vbCrLf
             macrostring = macrostring & "~ Select `main_dlg_cur` \"
             macrostring = macrostring & vbCrLf
@@ -196,7 +196,7 @@ Class MainWindow
             macrostring = macrostring & vbCrLf
             macrostring = macrostring & "`deco_red`;~ Timer `UI Desktop` `UI Desktop` `Gallery_UI_Timer`;"
             macrostring = macrostring & vbCrLf
-            macrostring = macrostring & "~ Close `main_dlg_cur` `user_custom_page_300586328:ProCmdViewGallery`;"
+            macrostring = macrostring & "~ Close `main_dlg_cur` `View:ProCmdViewGallery`;"
 
             session.RunMacro(macrostring)
 
@@ -251,7 +251,7 @@ Class MainWindow
             'macrostring = macrostring & vbCrLf
             'macrostring = macrostring & "~ Close `main_dlg_cur` `appl_casc`;\"
             'macrostring = macrostring & vbCrLf
-            macrostring = macrostring & "~ Select `main_dlg_cur` `user_custom_page_300586328:ProCmdViewGallery`;\"
+            macrostring = macrostring & "~ Select `main_dlg_cur` `View:ProCmdViewGallery`;\"
             macrostring = macrostring & vbCrLf
             macrostring = macrostring & "~ Select `main_dlg_cur` \"
             macrostring = macrostring & vbCrLf
@@ -351,7 +351,7 @@ Class MainWindow
 
             session.RunMacro(macrostring)
         Catch ex As Exception
-
+            MsgBox("Create a Decoration Specification apperenca state first.")
         End Try
 
 
