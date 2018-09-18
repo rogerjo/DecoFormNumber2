@@ -323,8 +323,45 @@ Class MainWindow
         InfoTextBox.Text = "Checking if parameter is set..."
         Call StartApplicationAndConnect()
         Call getCurrentParameterSetting()
+        Call CreateDecoView()
         Call getDecoView()
 
+    End Sub
+
+    Private Sub CreateDecoView()
+        Dim macrostring As String
+
+        Try
+
+            macrostring = "~ Command `ProCmdViewVisTool` ;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Command `ProCmdViewVisTool` ;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Select `visual_dlg0` `RadioSelApplMgr` 1 `appearance state`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Activate `visual_dlg0` `ZoneNmCreate`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Input `visual_dlg0` `Table_INPUT` `Decoration Specification`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Update `visual_dlg0` `Table_INPUT` `Decoration Specification`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Activate `visual_dlg0` `Table_INPUT`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Arm `visual_dlg0` `Table` 2 `Default appearance` `name_column`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Select `visual_dlg0` `Table` 2 `Default appearance` `name_column`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Arm `visual_dlg0` `Table` 2 `Default appearance` `name_column`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Activate `visual_dlg0` `Table` 2 `Default appearance` `name_column`;\"
+            macrostring = macrostring & vbCrLf
+            macrostring = macrostring & "~ Activate `visual_dlg0` `CloseBtn`;"
+
+
+            session.RunMacro(macrostring)
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub getDecoView()
@@ -351,7 +388,7 @@ Class MainWindow
 
             session.RunMacro(macrostring)
         Catch ex As Exception
-            MsgBox("Create a Decoration Specification apperenca state first.")
+
         End Try
 
 
