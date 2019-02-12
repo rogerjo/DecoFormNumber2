@@ -7,13 +7,13 @@
         x:Name='myWindow'
         x:Class="MainWindow"
         mc:Ignorable="d"
-        Title="Axis"
+        Title=" Axis"
         Height="600"
         Width="420"
         Loaded='Window_Loaded'
         ResizeMode='NoResize'
         Topmost='True'
-        Icon='Icons/DomeCamera.ico'>
+        Icon='Icons/Paint-Bucket.ico'>
 
     <Window.Resources>
         <Style TargetType='{x:Type Button}'>
