@@ -71,7 +71,7 @@
                     Margin='15,10,10,10'
                     HorizontalContentAlignment='Stretch'
                     VerticalContentAlignment='Stretch'
-                    Width='80'
+                    Width='90'
                     Height='110'
                     ToolTip="Sets the selected surfaces green">
 
@@ -89,35 +89,12 @@
                 </Grid>
 
             </Button>
-            <Button x:Name='setBlueColor'
-                    Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
-                    Margin='10'
-                    HorizontalContentAlignment='Stretch'
-                    VerticalContentAlignment='Stretch'
-                    Width='80'
-                    Height='110'
-                    ToolTip="Sets the selected surfaces blue">
-
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <ContentControl Content="{StaticResource BlueBucket}" Grid.Row="0"
-                           VerticalAlignment='Top' />
-                    <TextBlock Grid.Row="1"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment='Bottom'
-                               Margin='0,20,0,0'><Run Text='Set Blue' /></TextBlock>
-                </Grid>
-
-            </Button>
             <Button x:Name='setYellowColor'
                     Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
                     Margin='10'
                     HorizontalContentAlignment='Stretch'
                     VerticalContentAlignment='Stretch'
-                    Width='80'
+                    Width='90'
                     Height='110'
                     ToolTip="Sets the selected surfaces yellow" Padding="10">
                 <Grid>
@@ -138,7 +115,7 @@
                     Margin='10,10,15,10'
                     HorizontalContentAlignment='Stretch'
                     VerticalContentAlignment='Stretch'
-                    Width='80'
+                    Width='90'
                     Height='110'
                     ToolTip="Sets the selected surfaces red">
                 <Grid>

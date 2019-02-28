@@ -423,10 +423,6 @@ Class MainWindow
     Private Sub setGreenColor_Click(sender As Object, e As RoutedEventArgs) Handles setGreenColor.Click
         Call setGreenColorMacro()
     End Sub
-    Private Sub setBlueColor_Click(sender As Object, e As RoutedEventArgs) Handles setBlueColor.Click
-        Call setBlueColorMacro()
-    End Sub
-
 
 
     Private Sub setYellowColor_Click(sender As Object, e As RoutedEventArgs) Handles setYellowColor.Click
